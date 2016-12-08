@@ -1,7 +1,7 @@
 # src Makefile
 include ../Makefile.common
 OBJS+=startup.o
-OBJS+=main.o hard_init.o retarget.o
+OBJS+=main.o hard_init.o retarget.o gprs.o usart.o
 all: src
 src: app.a
 app.a: $(OBJS)

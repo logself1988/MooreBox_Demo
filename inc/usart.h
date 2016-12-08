@@ -1,6 +1,6 @@
 #ifndef __STM32_USART_H
 #define __STM32_USART_H
-#include "../GPRS/gprs.h"
+#include "gprs.h"
 extern int err;
 
 typedef unsigned char  u8;

@@ -5,15 +5,16 @@
 
 #include "gprs.h"
 #include "hard_init.h"
+#include "usart.h"
 //#include "../USART/usart.h"
 //#include "../TIMERS/times.h"
 //#include "../lcd_nokia5110/nokia_5110.h"
 //#include "EEPROM/eeprom.h"
 
 //porting
-#define PUT dbg_printf
+//#define PUT dbg_printf
 #define delay_GSM delay_ms
-#define PUT_2 dbg_printf
+//#define PUT_2 dbg_printf
 
 
 
@@ -87,20 +88,20 @@ void __GPRS_TCPIP()
 
     send_string_uart3(GPRS_TCP1);
     send_data_uart3(0x22);
-    send_string_uart3(g_config_data.protocoltype);
+    send_string_uart3(PROTOTOCOL);
     send_data_uart3(0x22);
     send_data_uart3(',');
     send_data_uart3(0x22);
-    send_string_uart3(g_config_data.ipaddr);
+    send_string_uart3(IPADDR);
     send_data_uart3(0x22);
     send_data_uart3(',');
     send_data_uart3(0x22);
-    send_string_uart3(g_config_data.portnum);
+	send_string_uart3(PORTNUM);
     send_data_uart3(0x22);
     send_data_uart3(0x0D);
     send_data_uart3(0x0A);
     PUT("destination address:");
-    PUT(g_config_data.ipaddr);
+	PUT(IPADDR);
 /*
 	LCD_write_english_string((LCD_WIDTH_PIXELS - strlen(g_config_data.ipaddr)*6)/2,3,LCD_BANK_LINE);
     if(0)
@@ -516,13 +517,13 @@ void send_gprs_data(char * buf , unsigned int count)
 
 void gprs_heart(char *w,int t)										 //温度和心跳参数
 {	
-	char *ptt = NULL;
+	//char *ptt = NULL;
 	char tstr[BUFLEN];
 	char tbuf[BUFLEN];
 	memset(tbuf,0,BUFLEN);
 	memset(tstr,0,BUFLEN);
 	sprintf(tstr,"%d",t);
-	ptt =  strstr((const char*)g_config_data.serialnum,"temp");		//检测到温度序列号
+/*	ptt =  strstr(SERNUM,"temp");		//检测到温度序列号
     if(ptt)
 	{
 		if(strlen(w)>0)
@@ -531,13 +532,13 @@ void gprs_heart(char *w,int t)										 //温度和心跳参数
 		    send_gprs_data(NO_SENSOR,1);
 	}
 	else
-	{
+	{*/
 		strcat(tbuf,"SN:");
-		strcat(tbuf,g_config_data.serialnum);
+		strcat(tbuf,SERNUM);
 		strcat(tbuf," BEAT:");
 		strcat(tbuf,tstr);
 		send_gprs_data(tbuf,1);										 //发送心跳和序列号
-	}
+	//}
 }
 
 
