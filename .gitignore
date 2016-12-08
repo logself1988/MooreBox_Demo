@@ -1,0 +1,111 @@
+# For C
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.bin
+
+# Debug files
+*.dSYM/
+*.su
+
+# For C++
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.d51
+
+# Debug files
+*.dSYM/
+*.su
+
+
+# C extensions
+*.so
+
+# others
+*.crf
+*.axf
+*.lnp
+*.plg
+*.sct
+*.tra
+*.htm
+*.info_code
+*.info_elf
+*.info_size
+*.info_symbol
+# VIM: Temperory files
+*~
+
+# VIM: Swap-files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# VIM: Commands :cs, :ctags
+tags
+cscope.*
+
+# VIM session
+Session.vim
+
+# VIM: netrw.vim: Network oriented reading, writing, browsing (eg: ftp scp) 
+.netrwhist
